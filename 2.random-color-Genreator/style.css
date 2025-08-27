@@ -1,0 +1,69 @@
+*{
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 20px;
+    font-size: 20px;
+}
+
+.Radom-coclur-genreateor{
+    display: flex;
+    gap: 10px   ;
+}
+.hex-color-geneator,  .rgb-color-geneator{
+    min-height: 100vh;
+    flex: 1;
+}
+.hex-color-geneator button{
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgb(128, 132, 84);
+}
+
+.rgb-color-geneator{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.hex-color-geneator{
+    background-color: blue;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.colur-value, .rgb-colur-value{
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.rgb-color-geneator{
+    background-color: rgb(0, 204, 255);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button-rgb-color{
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgb(128, 132, 84);
+}
+.rbg-copy-color{
+     padding: 12px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgb(128, 132, 84);
+}
