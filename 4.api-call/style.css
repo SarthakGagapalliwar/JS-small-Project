@@ -1,0 +1,36 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    padding: 15px;
+}
+
+h1{
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.post_list_continer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-item{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    border: 1px solid rgb(0, 30, 128);
+    background-color: rgb(174, 0, 255);
+    padding: 20px;
+}
+.post-item h3{
+    color: #fff;
+    font-size: 20px;
+}
+.post-item p{
+    font-size: 18px;
+    color: #fff;
+}
