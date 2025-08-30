@@ -1,10 +1,12 @@
-const productConatiner=document.querySelector('products-Conatiners');
+const productConatiner=document.querySelector('.products-Conatiners');
+const loadMoreButton=document.querySelector('.Load-Button');
 
 
+let currStep=0;
 
-async function fetchlistofProduct(){
+async function fetchlistofProduct(getCurrStep){
   try{
-    const responce=await fetch('https://dummyjson.com/products',{
+    const responce=await fetch(`https://dummyjson.com/products?limit=10&skip=${getCurrStep===0 ? 0 : getCurrStep*10}`,{
       method:'GET'
     })
 
@@ -29,13 +31,43 @@ Productlist.forEach(producItem=>{
   const productPrice = document.createElement("p");
 
 
-  
+  productTitel.textContent=producItem.title;
+  productDescription.textContent=producItem.description;
+  productThumbnail.src = producItem.thumbnail;
+  productPrice.textContent=producItem.price;
 
-})  
+
+  productItemWrapper.classList.add('product-item-wrapper');
+  productTitel.classList.add('product-Titel');
+  productDescription.classList.add('product-Desc');
+  productThumbnail.classList.add('product-Thumbnail');
+  productPrice.classList.add('product-Price');
 
 
+  productItemWrapper.appendChild(productThumbnail);
+  productItemWrapper.appendChild(productTitel);
+  productItemWrapper.appendChild(productPrice);
+  productItemWrapper.appendChild(productDescription);
+
+  if(productConatiner.children.length===20){
+    loadMoreButton.setAttribute('disabled', 'true');
+  }
+
+  productConatiner.appendChild(productItemWrapper);
+
+});  
 }
 
 
 
-fetchlistofProduct();
+fetchlistofProduct(currStep);
+
+loadMoreButton.addEventListener('click',()=>{
+  currStep++;
+
+  // if(currStep>2){
+  //    loadMoreButton.setAttribute('disabled', 'true');
+  // }
+
+  fetchlistofProduct(currStep);
+})
