@@ -1,0 +1,42 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+    background-color: rgb(144, 181, 181);
+}
+h1{
+    font-size: 50px;
+    color: blue;
+    margin-bottom: 40px;
+}
+.button-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.button-wrapper button{
+    border: none;
+    padding: 12px 20px;
+    background-color: rgb(135, 86, 25);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+.button-wrapper button.active{
+    background-color: black;
+}
+.content{
+    display: none;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 50px;
+}   
+.content.active {
+    display: block;
+}
