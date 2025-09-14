@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite Scroll Todos</title>
+  <style>
+    ul {
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .todo {
+      padding: 10px;
+      margin: 5px 0;
+      background: #f4f4f4;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Infinite Scroll Todos</h2>
+  <ul id="todo-list">
+    <li class="todo">Initial Todo</li>
+  </ul>
+
+  <script>
+    const list = document.querySelector("#todo-list");
+
+    function loadMoreTodos() {
+      for (let i = 0; i < 10; i++) {
+        const li = document.createElement("li");
+        li.className = "todo";
+        li.textContent = "New Todo " + Math.floor(Math.random() * 1000);
+        list.appendChild(li);
+      }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        loadMoreTodos();
+        observer.unobserve(entries[0].target);
+        observer.observe(document.querySelector(".todo:last-child"));
+      }
+    }, {});
+
+    const lastItem = document.querySelector(".todo:last-child");
+    observer.observe(lastItem);
+  </script>
+</body>
+</html>
