@@ -26,7 +26,7 @@ h1{
     position: relative;
     margin-bottom: 40px;
     max-width: 100%;
-    width: 400px;
+    width: 600px;
 }
 .preogress-continer::before{
     content: "";
@@ -67,6 +67,20 @@ h1{
     position: absolute;
     font-size: 25px;
     bottom: 25px;
+}
+
+.icon-wrapper.active{
+   background-color: red;
+
+}
+.icon-wrapper.active {
+    background-color: red;       /* highlight circle */
+    border-color: darkred;       /* change border too */
+    transform: scale(1.1);       /* pop out effect */
+}
+
+.icon-wrapper.active i {
+    color: yellow;               /* make active icon stand out */
 }
 
 .icon-wrapper .label{
